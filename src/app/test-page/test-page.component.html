@@ -3,8 +3,14 @@
 <!-- 
     Iterates through the json array, showing things in an unordered list 
     Does not need to be an unordered list.
+    KEYUP used to update on each button press. can use blur instead, or buttons, etc
 -->
 
+<div>
+    <p>test input:</p>
+    <input type="text" id="ssn" name="ssn" (keyup)="changeEvent($event)" />
+    <p>{{ssn}}</p>
+</div>
 <div>
     <p>Example of an unordered list:</p>
     @for(item of jsonArray; track item.title) {
@@ -12,6 +18,7 @@
         <li>{{item.title}}</li>
         <li>{{item.body}}</li>
         <li>{{item.number}}</li>
+        <li>{{item.ssn}}</li>
       </ul>
       
     }
@@ -25,6 +32,7 @@
                 <td>{{item.title}}</td>
                 <td>{{item.body}}</td>
                 <td>{{item.number}}</td>
+                <td>{{item.ssn}}</td>
             </tr>
           
         </table>
