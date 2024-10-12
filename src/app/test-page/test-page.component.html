@@ -1,0 +1,40 @@
+<p>test-page works!</p>
+
+<!-- 
+    Iterates through the json array, showing things in an unordered list 
+    Does not need to be an unordered list.
+-->
+
+<div>
+    <p>Example of an unordered list:</p>
+    @for(item of jsonArray; track item.title) {
+      <ul>
+        <li>{{item.title}}</li>
+        <li>{{item.body}}</li>
+        <li>{{item.number}}</li>
+      </ul>
+      
+    }
+</div>
+
+<div>
+    <p>Example of a table:</p>
+    @for(item of jsonArray; track item.title) {
+        <table >
+            <tr>
+                <td>{{item.title}}</td>
+                <td>{{item.body}}</td>
+                <td>{{item.number}}</td>
+            </tr>
+          
+        </table>
+    }
+</div>
+
+<style>
+    table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 5px;
+}
+</style>
