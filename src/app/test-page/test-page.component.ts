@@ -17,21 +17,23 @@ export class TestPageComponent {
       "title": "hello1",
       "body": "this is a body1",
       "number": 31,
-      "ssn": this.ssn
+      "ssn": this.ssn,
+      "btnssn": this.ssn,
     },
     {
       "title": "hello2",
       "body": "this is a body2",
       "number": 32,
-      "ssn": this.ssn
+      "ssn": this.ssn,
+      "btnssn": this.ssn
     },
     {
       "title": "hello3",
       "body": "this is a body3",
       "number": 33,
-      "ssn": this.ssn
+      "ssn": this.ssn,
+      "btnssn":this.ssn,
     },
-
   ]
 
   // CHANGE EVENT FROM KEYUP IN TEMPLATE
@@ -48,7 +50,13 @@ export class TestPageComponent {
     this.jsonArray.forEach(item => {
       item.ssn = ssn
     });
+  }
 
+  addSSN(text: any){
+    this.jsonArray.forEach(item => {
+      item.btnssn = text;
+      
+    });
   }
 
 

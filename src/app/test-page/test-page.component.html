@@ -8,8 +8,9 @@
 
 <div>
     <p>test input:</p>
-    <input type="text" id="ssn" name="ssn" (keyup)="changeEvent($event)" />
-    <p>{{ssn}}</p>
+    <input type="text" id="ssn" name="ssn" #ssn (keyup)="changeEvent($event)" />
+    <button (click)="addSSN(ssn.value)">ADD SSN</button>
+    <p>{{ssn.value}}</p>
 </div>
 <div>
     <p>Example of an unordered list:</p>
@@ -19,23 +20,40 @@
         <li>{{item.body}}</li>
         <li>{{item.number}}</li>
         <li>{{item.ssn}}</li>
+        <li>{{item.btnssn}}</li>
       </ul>
       
     }
 </div>
 
 <div>
+    <p>For the table, the SSN row will fill on key up. Every character added will update the JSON object.<br>
+        For ButtonSSN, this will only update when the button next to the input is pushed.</p>
     <p>Example of a table:</p>
     @for(item of jsonArray; track item.title) {
         <table >
             <tr>
+                <td>Title</td>
                 <td>{{item.title}}</td>
+            </tr>
+            <tr>
+                <td>Body</td>
                 <td>{{item.body}}</td>
+            </tr>
+            <tr>
+                <td>Number</td>
                 <td>{{item.number}}</td>
+            </tr>
+            <tr>
+                <td>SSN</td>
                 <td>{{item.ssn}}</td>
             </tr>
-          
+            <tr>
+                <td>ButtonSSN</td>
+                <td>{{item.btnssn}}</td>
+            </tr>          
         </table>
+        <br>
     }
 </div>
 
